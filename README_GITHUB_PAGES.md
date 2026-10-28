@@ -27,3 +27,6 @@ Değişen dosyaları aynı yollarla deponun üzerine yükleyip commit et. Pages 
 - POTA'nın çevrimiçi eşleşmesi mevcut PeerJS bağlantısını kullanır; GitHub Pages ayrı bir oyun sunucusu sağlamaz.
 
 Kaynak: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+## HORI mobil güncellemesi
+Hori mobilde yatay oynanır. Hazırım düğmesine basılmadan oyun başlamaz. Başlatma ve yeniden denemede 3 saniyelik geri sayım vardır; dikey çevirme ve duraklatma geri sayımı da durdurur. Üst bilgiler tek şeritte, joystick ve dash alt köşelerdedir. Bu güncelleme için tüm dosyaları mevcut deponun üzerine aynı yollarla yükleyip commit edin.

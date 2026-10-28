@@ -2,3 +2,4 @@
 body{isolation:isolate}.library-title strong{display:block;font-size:13px;font-weight:500}.library-title small{display:block;margin-top:6px;font-size:10px;color:#94a1b7;font-weight:400;line-height:1.5}
 
 .rail-heading{max-width:700px}@media(min-width:901px){.library-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(orientation:landscape) and (max-height:600px){body[data-game=hori] .player-bar{height:38px;padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));gap:8px}body[data-game=hori] .player-icon{width:27px;height:27px;font-size:15px}body[data-game=hori] .back-button{font-size:10px;padding:5px 0}body[data-game=hori] #player-title{font-size:9px}body[data-game=hori] .loading{inset:38px 0 0}}
