@@ -1,0 +1,105 @@
+/* Oyun Salonu: common typography, surfaces and controls for all four games. */
+:root{color-scheme:dark;--bg:#11151f;--text:#f3f4f7;--muted:#a4a8b2;--line:#ffffff20;--surface:#171d29;--accent:#e4b27b;--ambient:151,96,50;--teal:var(--accent);--red:#f17e8d;--amber:#e7bf83;--bone:var(--text);--dim:var(--muted);--edge:#465061;--brass:var(--accent);--ember:var(--accent);--patina:var(--accent)}
+body[data-game=yorunge]{--accent:#87dbd1;--ambient:40,124,133}
+body[data-game=kule-dengesi]{--accent:#c7b5ed;--ambient:102,82,157}
+body[data-game=tek-atis]{--accent:#a6d4a0;--ambient:71,118,78}
+body{background:radial-gradient(ellipse at 75% 60%,rgba(var(--ambient),.17),transparent 65%),linear-gradient(135deg,#11151f,#171823);color:var(--text);font-family:Arial,Helvetica,system-ui,sans-serif}
+button{font-family:inherit;transition:background .15s,transform .15s,border-color .15s}
+button:focus-visible,a:focus-visible{outline:2px solid #f3f4f7;outline-offset:4px}
+.salon-mini #app{width:min(100%,480px)}
+.salon-mini header{padding:4px 2px 16px;border-bottom:1px solid #ffffff12;gap:10px}
+.salon-mini .brand{font-family:inherit;font-weight:500;font-size:12px;letter-spacing:.05em;color:#d5d8df;gap:8px}
+.salon-mini .brand-icon{font-size:22px;color:var(--accent)}
+.salon-mini .tag{font-size:8px;font-weight:400;color:#a4a8b2;letter-spacing:.08em}
+.salon-mini .actions{gap:6px}
+.salon-mini .actions button{border-radius:50%;width:34px;height:34px;border:1px solid #ffffff20;background:#ffffff08;color:#d5dae5;font-size:17px}
+.salon-mini .actions button:hover{background:#ffffff16;border-color:#ffffff40}
+.salon-mini .actions button.off{color:#7d8798}
+.salon-mini .hud{margin:22px 5px 14px}
+.salon-mini .label{font-size:8px;font-weight:400;letter-spacing:.18em;color:#a4a8b2}
+.salon-mini .hud strong{font-size:44px;font-weight:600;letter-spacing:-.055em;color:var(--text);line-height:1.15;margin-top:5px}
+.salon-mini .record strong{font-size:25px;margin-top:12px;color:#c4cad5;font-weight:400}
+.salon-mini .arena{border:1px solid #ffffff14;border-radius:24px;background:linear-gradient(145deg,#171d2970,#11151f95);box-shadow:0 16px 65px #0002;overflow:hidden}
+.salon-mini canvas{border-radius:23px}
+.salon-mini .overlay{border-radius:23px;background:radial-gradient(ellipse at 50% 70%,rgba(var(--ambient),.13),transparent 75%),#11151ff0;overflow:auto;scrollbar-width:thin}
+.salon-mini .panel{width:100%;padding:26px 20px}
+.salon-mini .eyebrow{font-size:8px;font-weight:400;letter-spacing:.18em;color:var(--accent);margin-bottom:17px}
+.salon-mini h1{font-family:inherit;font-size:clamp(33px,8vw,49px);font-weight:800;letter-spacing:-.05em;line-height:1.06;text-shadow:none;margin:0 0 16px}
+.salon-mini #description{font-size:13px;line-height:1.8;color:#c3c7d0;margin-bottom:20px}
+.salon-mini .legend{gap:14px;font-size:10px;color:#a4a8b2;margin-bottom:23px;font-weight:400}
+.salon-mini .legend .teal{background:var(--accent)}
+.salon-mini .dot{width:5px;height:5px}
+.salon-mini .primary{width:min(100%,245px);padding:15px 27px;border-radius:30px;background:#f2f3f6;color:#171a22;font-size:13px;font-weight:600;letter-spacing:.02em;box-shadow:0 7px 24px #0001}
+.salon-mini .primary:hover{background:#fff;transform:translateY(-2px)}
+.salon-mini .primary:active{transform:scale(.97)}
+.salon-mini .primary span{font-weight:400;font-size:19px}
+.salon-mini .control{font-size:9px;color:#a4a8b2;line-height:1.6;margin-top:16px}
+.salon-mini .result{gap:25px;margin-bottom:22px}
+.salon-mini .result strong{font-size:24px;font-weight:500;letter-spacing:-.03em}
+.salon-mini .result span{font-size:9px;color:#a4a8b2}
+.salon-mini footer{border:1px solid #ffffff14;background:#ffffff04;border-radius:16px;margin:14px 0 0;padding:14px 18px}
+.salon-mini #direction{color:var(--accent);font-size:24px}
+.salon-mini #hint{font-size:9px;letter-spacing:.07em;color:#bec5d1}
+.salon-mini #multiplier{font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--accent)}
+.salon-mini .footnote{margin:18px 3px 0;font-size:9px;color:#929bab}
+.salon-mini .footnote span{font-size:8px;letter-spacing:.12em}
+.salon-mini #message{top:7%;color:var(--accent);font-weight:500;font-size:11px;text-shadow:0 1px 10px #11151f}
+.salon-mini #app:fullscreen{background:var(--bg);width:100%;max-width:none}
+.salon-pota #wrap{border:1px solid #ffffff18;border-radius:22px;overflow:hidden;box-shadow:0 16px 65px #0003;background:#11151f}
+.salon-pota canvas{border-radius:21px}
+.salon-pota #console{gap:7px;padding:0 3.5% 2.2%}
+.salon-pota .tool{font-family:inherit;font-size:11px;letter-spacing:.05em;border:1px solid #ffffff20;border-radius:15px;background:#ffffff08;box-shadow:none;color:#aeb7c6;gap:7px}
+.salon-pota .tool:before,.salon-pota .tool:after{display:none}
+.salon-pota .tool .cost{font-family:inherit;font-size:10px;font-weight:400;color:#a4a8b2;letter-spacing:.08em}
+.salon-pota .tool.ready{color:var(--text);text-shadow:none;border-color:#e4b27b66;background:#e4b27b10}
+.salon-pota .tool.ready .cost{color:var(--accent)}
+.salon-pota .tool.armed{background:var(--accent);border-color:var(--accent);color:#201b17}
+.salon-pota .tool.armed .cost{color:#201b17}
+.salon-pota .tool:disabled{filter:none;opacity:.4}
+.salon-pota .tool:not(:disabled):hover{border-color:#ffffff55}
+.salon-pota .tool:not(:disabled):active{transform:scale(.97);filter:none}
+.salon-pota .icon{border-radius:50%;border-color:#ffffff24;background:#ffffff08;color:#b6bfce}
+.salon-pota .icon.on{border-color:#e4b27b55;color:var(--accent)}
+.salon-pota #toast{font-family:inherit;font-size:19px;letter-spacing:-.02em;color:var(--accent);text-shadow:0 2px 18px #11151f}
+.salon-pota .sheet{padding:25px 24px;background:radial-gradient(ellipse at 70% 75%,#e4b27b10,transparent 60%),#11151ff5;overflow-y:auto}
+.salon-pota .eyebrow{font-family:inherit;color:var(--accent);font-size:8px;font-weight:400;letter-spacing:.18em}
+.salon-pota .title{font-family:inherit;font-size:64px;font-weight:800;letter-spacing:-.055em;color:var(--text);text-shadow:none;margin:15px 0 7px}
+.salon-pota .rule{width:24px;background:#ffffff38;margin:16px 0}
+.salon-pota .sub{font-size:11px;color:#c3c7d0;letter-spacing:.02em;line-height:1.9;text-transform:none}
+.salon-pota .final{font-family:inherit;font-size:64px;font-weight:600;letter-spacing:-.05em;margin:18px 0 10px}
+.salon-pota .stats{font-size:10px;line-height:2.2;letter-spacing:.02em;color:#a4a8b2}
+.salon-pota .stats b{color:#f3f4f7}
+.salon-pota .btn{font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.02em;padding:14px 28px;border:1px solid transparent;border-radius:30px;background:#f2f3f6;color:#171a22;box-shadow:none;margin-top:23px}
+.salon-pota .btn:hover{background:#fff;transform:translateY(-2px)}
+.salon-pota .btn:active{transform:scale(.97);box-shadow:none}
+.salon-pota .btn.ghost{background:#ffffff06;border:1px solid #ffffff25;box-shadow:none;color:#bfc7d4;padding:14px 22px;font-weight:400}
+.salon-pota .btn.ghost:hover{background:#ffffff10;color:#fff}
+.salon-pota .modes{gap:6px;margin-top:23px}
+.salon-pota .mode{border:1px solid #ffffff24;border-radius:20px;background:#ffffff05;color:#a4a8b2;font-family:inherit;font-size:10px;font-weight:400;letter-spacing:.02em;padding:9px 16px;text-transform:none}
+.salon-pota .mode.on{background:#e4b27b18;border-color:#e4b27b66;color:var(--accent)}
+.salon-pota .seedline{font-size:9px;letter-spacing:.02em;color:#929bab;margin-top:12px;line-height:1.8}
+.salon-pota .ver{font-family:inherit;font-size:8px;letter-spacing:.12em;color:#8993a4;bottom:12px}
+body.high-contrast{background:#0d111b}
+body.high-contrast .overlay,body.high-contrast .sheet{background:#0d111bfa}
+body.high-contrast .label,body.high-contrast .control,body.high-contrast .seedline,body.high-contrast .footnote{color:#c4cad5}
+body.no-motion *,body.no-motion *:before,body.no-motion *:after{transition:none!important;animation:none!important}
+@media(max-height:720px){.salon-mini #app{width:min(100%,calc(100dvh - 192px),480px)}.salon-mini header{padding-bottom:9px}.salon-mini .hud{margin:12px 4px 10px}.salon-mini .hud strong{font-size:32px}.salon-mini .record strong{font-size:22px;margin-top:9px}.salon-mini .panel{padding:16px 14px}.salon-mini h1{font-size:34px;margin-bottom:12px}.salon-mini .eyebrow{margin-bottom:11px}.salon-mini #description{font-size:12px;margin-bottom:13px}.salon-mini .legend{margin-bottom:16px}.salon-mini .primary{padding:12px 24px}.salon-mini .control{margin-top:12px}.salon-mini footer{padding:11px 13px;margin-top:11px}.salon-mini .footnote{margin-top:12px}}
+@media(max-width:360px){.salon-mini .tag{display:none}.salon-mini .brand{font-size:10px}.salon-mini .brand-icon{font-size:19px}.salon-mini .actions button{width:30px;height:30px}.salon-mini h1{font-size:31px}.salon-mini .panel{padding-left:12px;padding-right:12px}.salon-mini #description{font-size:11px}.salon-mini .legend{gap:10px;font-size:9px}}
+@media(orientation:landscape) and (max-height:600px){.salon-mini #app{width:min(100%,900px);grid-template-columns:minmax(220px,1fr) minmax(200px,1fr);gap:0 28px}.salon-mini .arena{max-width:calc(100dvh - 28px)}.salon-mini header{padding-bottom:12px}.salon-mini .hud{margin:15px 5px}.salon-mini .panel{padding:12px}.salon-mini h1{font-size:30px}.salon-mini .eyebrow{font-size:7px;margin-bottom:10px}.salon-mini #description{font-size:11px;margin-bottom:12px}.salon-mini .legend{margin-bottom:14px;font-size:9px}.salon-mini .primary{padding:11px 24px}.salon-mini .control{font-size:8px;margin-top:10px}.salon-mini .result{margin-bottom:15px;gap:18px}.salon-mini .result strong{font-size:21px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+/* Keep tall panels reachable on narrow screens without changing the arena. */
+.salon-mini .panel{flex-shrink:0;margin:auto}
+.salon-pota #wrap{container-type:inline-size}
+.salon-pota .sheet{justify-content:flex-start;touch-action:pan-y;gap:0;padding:min(25px,6cqw)}
+.salon-pota .sheet:before,.salon-pota .sheet:after{content:'';flex:1 0 10px;min-height:10px}
+.salon-pota .sheet>*{flex-shrink:0}
+.salon-pota .title{font-size:min(64px,17cqw)}
+.salon-pota .pause-title{font-size:min(36px,10cqw)}
+.salon-pota .final{font-size:min(64px,17cqw)}
+.salon-pota .btn{font-size:min(12px,3.4cqw);padding:min(14px,3.8cqw) min(28px,7.5cqw)}
+.salon-pota .btn.ghost{padding:min(14px,3.8cqw) min(22px,6cqw)}
+.salon-pota .sub{font-size:min(11px,3.1cqw)}
+.salon-pota .mode{font-size:min(10px,3cqw);padding:min(9px,2.5cqw) min(16px,4.4cqw)}
+.salon-pota .tool{font-size:min(11px,3.3cqw);gap:min(7px,1.8cqw)}
+.salon-pota .tool .cost{font-size:min(10px,3cqw)}
+.salon-pota .icon{width:min(26px,7.5cqw);height:min(26px,7.5cqw);font-size:min(11px,3.3cqw)}
